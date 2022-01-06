@@ -20,3 +20,15 @@ class Pr_Add(View):
             return redirect('/')
         else:
             return render(requests,'core/addproduct.html',{'mytb':myform})
+
+class EditProduct(View):
+    def get(self,request, id):
+        stu =Product.objects.get(id=id)
+        fm = AddForm(instance=stu)
+        return render(request, 'core/edit-product.html', {'form':fm})
+    def post(self, request, id):
+        stu = Product.objects.get(id=id)
+        fm = AddForm(request.POST, instance=stu)
+        if fm.is_valid():
+            fm.save()
+        return redirect('/')

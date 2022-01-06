@@ -29,6 +29,9 @@
             <td>{{kpc.name}}</td>
             <td>{{kpc.brand}}</td>
             <td>{{kpc.price}}</td>
+            <td>
+              <a href="{% url 'edit-product' kpc.id %}" class="btn btn-warning btn-sm">Edit</a>
+        </td>
           </tr>
           {% endfor %}
         </tbody>

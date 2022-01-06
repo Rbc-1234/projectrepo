@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{%block title%}{%endblock title%}
+{%block content%}
+
+<html>
+<div class="container">
+  <div class="row justify-content-around mt-3 text-center">
+    <div class="col-sm-8">
+      <h3>EMPLOYEE DETAILS</h3>
+      <div class="col-sm-8">
+        <a href="{% url 'addproduct' %}" class="btn btn-primary float-end">Add</a>
+        </div>
+    </div>
+  <div class="row justify-content-around mt-1">
+    <div class="col-sm-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for kpc in mytb %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{kpc.name}}</td>
+            <td>{{kpc.brand}}</td>
+            <td>{{kpc.price}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</html>
+
+
+
+{%endblock content%}

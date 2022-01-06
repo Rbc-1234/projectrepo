@@ -1,1 +1,1 @@
-web: gunicorn heropro.wspi
+web: gunicorn heropro.wsgi
